@@ -13,14 +13,18 @@
     public interface IAuditEntity
     {
         DateTime CreatedDate { get; set; }
+        string CreatedBy { get; set; }
         DateTime? UpdatedDate { get; set; }
+        string? UpdatedBy { get; set; }
     }
 
     public abstract class BaseEntity<TKey> : IEntityKey<TKey>, IAuditEntity, ISoftDelete
     {
         public TKey Id { get; set; }
         public DateTime CreatedDate { get; set; }
+        public string CreatedBy { get; set; } = string.Empty;
         public DateTime? UpdatedDate { get; set; }
+        public string? UpdatedBy { get; set; }
         public bool SoftDeleted { get; set; }
     }
 }
