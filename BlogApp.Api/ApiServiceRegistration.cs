@@ -1,4 +1,6 @@
-﻿using OfficeOpenXml;
+﻿using BlogApp.Api.Services;
+using BlogApp.Application.Services;
+using OfficeOpenXml;
 
 namespace BlogApp.Api
 {
@@ -9,6 +11,8 @@ namespace BlogApp.Api
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<ILoggedInUserService, LoggedInUserService>();
+
             return services;
         }
 

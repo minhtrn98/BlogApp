@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using BlogApp.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
+using BlogApp.Domain;
 
 namespace BlogApp.Infrastructure
 {
@@ -18,6 +19,8 @@ namespace BlogApp.Infrastructure
             .AddRepositories();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
             return services;
         }
