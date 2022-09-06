@@ -22,7 +22,10 @@ namespace BlogApp.Infrastructure.Configurations
                 .IsRequired();
 
             builder.Property(e => e.ParentId)
-                .IsRequired();
+                .IsRequired(false);
+
+            builder.HasMany(e => e.PostComments).WithOne(e => e.Parent).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(e => e.Parent).WithMany(e => e.PostComments).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

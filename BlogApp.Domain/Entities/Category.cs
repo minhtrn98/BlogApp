@@ -10,7 +10,7 @@ namespace BlogApp.Domain.Entities
         public string Content { get; set; } = null!;
 
         public int? ParentId { get; set; }
-        public Category? ParentCategory { get; set; }
+        public Category? Parent { get; set; }
 
         public IEnumerable<Post> Posts { get; set; } = Enumerable.Empty<Post>();
     }

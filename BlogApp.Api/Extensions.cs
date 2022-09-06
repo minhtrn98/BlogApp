@@ -4,7 +4,7 @@ using OfficeOpenXml;
 
 namespace BlogApp.Api
 {
-    public static class ApiServiceRegistration
+    public static class Extensions
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {

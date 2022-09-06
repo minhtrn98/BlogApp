@@ -7,7 +7,7 @@ using BlogApp.Domain;
 
 namespace BlogApp.Infrastructure
 {
-    public static class InfrastructureExtensions
+    public static class Extensions
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
