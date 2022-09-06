@@ -13,7 +13,7 @@ namespace BlogApp.Domain.Entities
         public int? ParentId { get; set; }
         public Category? Parent { get; set; }
 
-        public IEnumerable<Post> Posts { get; set; } = default!;
-        public IEnumerable<Category> Childs { get; set; } = default!;
+        public IEnumerable<CategoryPosts>? CategoryPosts { get; set; }
+        public IEnumerable<Category>? Childs { get; set; }
     }
 }

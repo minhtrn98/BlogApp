@@ -7,7 +7,7 @@ namespace BlogApp.Infrastructure.Repositories
     public class Repository<TEntity, TKey> : IRepository<TEntity, TKey>
         where TEntity : BaseEntity<TKey>, new()
     {
-        protected readonly BlogAppDbContext _dbContext;
+        private readonly BlogAppDbContext _dbContext;
         protected DbSet<TEntity> DbSet => _dbContext.Set<TEntity>();
 
         public Repository(BlogAppDbContext dbContext)

@@ -15,6 +15,6 @@ namespace BlogApp.Domain.Entities
         public int? ParentId { get; set; }
         public PostComment? Parent { get; set; }
 
-        public IEnumerable<PostComment> PostComments { get; set; } = default!;
+        public IEnumerable<PostComment>? PostComments { get; set; }
     }
 }

@@ -12,9 +12,9 @@ namespace BlogApp.Domain.Entities
         public DateTime? PublishedAt { get; set; }
         public string Content { get; set; } = null!;
 
-        public IEnumerable<PostMeta> PostMetas { get; set; } = default!;
-        public IEnumerable<PostComment> PostComments { get; set; } = default!;
-        public IEnumerable<Tag> Tags { get; set; } = default!;
-        public IEnumerable<Category> Categories { get; set; } = default!;
+        public IEnumerable<PostMeta>? PostMetaes { get; set; }
+        public IEnumerable<PostComment>? PostComments { get; set; }
+        public IEnumerable<Tag>? Tags { get; set; }
+        public IEnumerable<Category>? Categories { get; set; }
     }
 }
