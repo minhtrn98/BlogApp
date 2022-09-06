@@ -8,9 +8,11 @@ namespace BlogApp.Api.Services
     {
         public LoggedInUserService(IHttpContextAccessor httpContextAccessor)
         {
-            UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue(JwtClaimTypes.Subject);
+            UserId = "1";
+                //httpContextAccessor.HttpContext?.User?.FindFirstValue(JwtClaimTypes.Subject)
+                //?? throw new Exception("Cannot get logged in user id");
         }
 
-        public string? UserId { get; }
+        public string UserId { get; }
     }
 }

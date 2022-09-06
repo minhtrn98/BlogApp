@@ -1,6 +1,7 @@
 ﻿using Serilog;
 using BlogApp.Infrastructure;
 using Microsoft.OpenApi.Models;
+using BlogApp.Application;
 
 namespace BlogApp.Api
 {
@@ -19,6 +20,7 @@ namespace BlogApp.Api
             services.AddControllers();
 
             services.AddInfrastructure(Configuration);
+            services.AddApplication();
 
             services.AddServices();
             services.AddMappers();
