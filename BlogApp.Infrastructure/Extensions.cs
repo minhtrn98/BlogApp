@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using BlogApp.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using BlogApp.Domain;
+using MediatR;
+using System.Reflection;
 
 namespace BlogApp.Infrastructure
 {
@@ -21,6 +23,8 @@ namespace BlogApp.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             return services;
         }
