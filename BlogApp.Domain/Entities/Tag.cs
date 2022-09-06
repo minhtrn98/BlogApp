@@ -9,6 +9,6 @@ namespace BlogApp.Domain.Entities
         public string Slug { get; set; } = null!;
         public string Content { get; set; } = null!;
 
-        public IEnumerable<Post> Posts { get; set; } = Enumerable.Empty<Post>();
+        public IEnumerable<Post> Posts { get; set; } = default!;
     }
 }

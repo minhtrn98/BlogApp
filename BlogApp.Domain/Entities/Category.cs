@@ -1,4 +1,5 @@
 ﻿using BlogApp.Domain.Commons;
+using Microsoft.VisualBasic;
 
 namespace BlogApp.Domain.Entities
 {
@@ -12,6 +13,7 @@ namespace BlogApp.Domain.Entities
         public int? ParentId { get; set; }
         public Category? Parent { get; set; }
 
-        public IEnumerable<Post> Posts { get; set; } = Enumerable.Empty<Post>();
+        public IEnumerable<Post> Posts { get; set; } = default!;
+        public IEnumerable<Category> Childs { get; set; } = default!;
     }
 }
