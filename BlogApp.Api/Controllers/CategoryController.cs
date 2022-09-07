@@ -7,19 +7,17 @@ namespace BlogApp.Api.Controllers
     public class CategoryController : BlogAppControllerBase
     {
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll()
         {
-            return Mediator is null
-                ? BadRequest()
-                : Ok(await Mediator.Send(new GetCategoriesQuery()));
+            return Ok(await Mediator.Send(new GetCategoriesQuery()));
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create(CreateCategoryCommand command)
         {
-            return Mediator is null
-                ? BadRequest()
-                : Ok(await Mediator.Send(command));
+            return Ok(await Mediator.Send(command));
         }
     }
 }
