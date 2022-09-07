@@ -16,10 +16,14 @@ namespace BlogApp.Infrastructure.Queries.Handlers
 
         public async Task<IEnumerable<CategoryDto>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
         {
+            var queryOptions = new CategoryDto.QueryOptions()
+                .SetIncludeChilds();
+
             return await _dbContext.Categories
                 .Where(c => c.SoftDeleted == false && c.ParentId == null)
                 .Include(c => c.Childs)
-                .Select(c => c.AsDto())
+                .Select(c => c.AsDto(queryOptions))
+                .AsNoTracking()
                 .ToListAsync(cancellationToken);
         }
     }

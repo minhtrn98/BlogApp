@@ -8,9 +8,9 @@ namespace BlogApp.Api.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(CancellationToken cancellation)
         {
-            return Ok(await Mediator.Send(new GetCategoriesQuery()));
+            return Ok(await Mediator.Send(new GetCategoriesQuery(), cancellation));
         }
 
         [HttpPost]
