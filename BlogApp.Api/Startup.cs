@@ -1,7 +1,7 @@
-﻿using Serilog;
+﻿using BlogApp.Application;
 using BlogApp.Infrastructure;
 using Microsoft.OpenApi.Models;
-using BlogApp.Application;
+using Serilog;
 
 namespace BlogApp.Api
 {

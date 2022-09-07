@@ -1,7 +1,7 @@
-﻿using BlogApp.Domain;
+﻿using BlogApp.Application.Services;
+using BlogApp.Domain;
 using BlogApp.Domain.Commons;
 using BlogApp.Domain.Entities;
-using BlogApp.Application.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.Infrastructure

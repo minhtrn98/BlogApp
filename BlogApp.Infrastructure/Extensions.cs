@@ -1,10 +1,10 @@
-﻿using BlogApp.Domain.Repositories;
+﻿using BlogApp.Domain;
+using BlogApp.Domain.Repositories;
+using BlogApp.Infrastructure.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using BlogApp.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-using BlogApp.Domain;
-using MediatR;
 using System.Reflection;
 
 namespace BlogApp.Infrastructure
