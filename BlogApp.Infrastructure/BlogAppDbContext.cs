@@ -22,6 +22,7 @@ namespace BlogApp.Infrastructure
             ILoggedInUserService loggedInUserService,
             IDateTimeProvider dateTimeProvider) : base(options)
         {
+            Console.WriteLine("Init blog app db context");
             _loggedInUserService = loggedInUserService;
             _dateTimeProvider = dateTimeProvider;
         }
@@ -29,6 +30,11 @@ namespace BlogApp.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(BlogAppDbContext).Assembly);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

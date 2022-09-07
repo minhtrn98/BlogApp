@@ -10,11 +10,11 @@ namespace BlogApp.Domain.Entities
         public string Content { get; set; } = null!;
 
         public int PostId { get; set; }
-        public Post Post { get; set; } = null!;
+        public virtual Post Post { get; set; } = null!;
 
         public int? ParentId { get; set; }
-        public PostComment? Parent { get; set; }
+        public virtual PostComment? Parent { get; set; }
 
-        public IEnumerable<PostComment>? PostComments { get; set; }
+        public virtual IEnumerable<PostComment>? PostComments { get; set; }
     }
 }

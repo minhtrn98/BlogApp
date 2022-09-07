@@ -1,6 +1,4 @@
-﻿using BlogApp.Domain.Entities;
-
-namespace BlogApp.Application.DTOs
+﻿namespace BlogApp.Application.DTOs
 {
     public class CategoryDto
     {

@@ -8,6 +8,6 @@ namespace BlogApp.Domain.Entities
         public string? Content { get; set; }
 
         public int PostId { get; set; }
-        public Post? Post { get; set; }
+        public virtual Post? Post { get; set; }
     }
 }
