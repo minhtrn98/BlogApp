@@ -24,7 +24,7 @@ namespace BlogApp.Application.Commands.Handlers
                 ParentId = request.ParentId
             };
 
-            await _unitOfWork.CategoryRepository.AddAsync(category, cancellationToken);
+            await _unitOfWork.Category.AddAsync(category, cancellationToken);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
